@@ -1,0 +1,124 @@
+---
+title: 'Corredores biologicos y cambio climatico en el cono sur'
+author: "Derek Corcoran"
+date: "`r Sys.Date()`"
+output: pdf_document
+bibliography: bibliography.bib
+---
+
+#Introducción
+
+La distribución actual de las especies no será la misma en el futuro, por lo que es importante que las áreas protegidas cubran tanto una porción de la distribución actual como de la futura. Además, es importante que las especies puedan moverse desde los hábitat  presentes hasta los que potencialmente utilizarían en el futuro. No es suficiente con que existan ambas áreas, sino que no hayan barreras al movimiento de las especies de una a otra.
+
+Uno de los objetivos principales de la ecología es el entender la abundancia y distribución de los organismos [@elton_animal_1927]. La distribución de una especie, corresponde a los límites geográficos de su presencia, y es generalmente reconocido que la extensión del rango de una especie es proporcional a la amplitud de su nicho [@gaston_structure_2003; @peterson_ecological_2011]. Los determinantes y limitantes de la distribución de una especie pueden ser tanto bióticos (incapacidad de reproducirse, o sobrevivir en ciertas condiciones) o bióticos (influenciado por depredadores, parásitos y/o mutualistas) [@gaston_geographic_2009]. A pesar de ser una característica básica de los organismos es extremadamente complejo de estudiar, en parte por ser un concepto dinámico ya que el rango de una especie puede cambiar por cambios en los factores que limitan el rango o debido a cambios evolutivos de la especie que modifican estos límites [@holt_evolutionary_2003; @macarthur_geographical_1972; @macarthur_theory_1968]. 
+
+De los factores que más han modificado el rango de dispersión de especies se encuentran la sobrexplotación de los recursos naturales, el cambio climático global [@parmesan_beyond_2013; @parmesan_poleward_1999], la fragmentación de hábitat [@bright_habitat_1993], y la introducción de especies entre otras [@mooney_evolutionary_2001]. Es por esto que se le atribuye al ser humano la responsabilidad de ser uno de los principales moduladores del rango de las especies.
+
+Una herramienta ampliamente utilizada para el estudio de los rangos geográficos de las especies es la modelación de distribución de especies. Esta metodología se ha utilizado para estudiar tanto **distribuciones actuales a partir de** …. [@hirzel_habitat_2008; @peterson_ecological_2011; @soberon_grinnellian_2007], como para predecir las distribuciones potenciales de las especies producto del cambio climático bajo distintos escenarios propuestos para el futuro [@baker_role_2000; maiorano_building_2013].
+
+Bajo esta línea de estudio, el cambio climático y la fragmentación del hábitat se combinan formando una nueva problemática. Por efecto del cambio climático se predice que las especies cambien su área de distribución [@chen_rapid_2011], sin embargo es necesario que se dispersen hacia esta nueva área. Debido a la presencia de hábitats fragmentados producto del proceso de urbanización, industrialización o cambios de uso de suelo, las especies no siempre podrán llegar a esta nueva área óptima.
+#Los corredores biologicos surgen como una herramienta para...
+ Para evitar problemas de conservación de especies debido a que no puedan dispersarse a areas optimas, se requiere de corredores biológicos [@nunez_connectivity_2013; @rosenberg_biological_1997].
+
+Recientemente en una revisión a los métodos utilizados para la modelación espacial de corredores biologicos  
+
+Tan solo tomando en cuenta condiciones actuales, se ha determinado que aproximadamente un 13% de las especies chilenas no se encuentran consideradas por las áreas protegidas de Chile [@marquet_how_2004; tognelli_how_2008]. Esto sin tomar en cuenta los cambios en distirbución que tendrian estas especies dado los factores anteriormente mencionados.
+
+
+Junto con esto, las soluciones que se toman a nivel nacional pueden ser ineficientes comparativamente con soluciones a nivel regional [@levin_biodiversity_2014; @mazor_collaboration_2013; mazor_large-scale_2014], donde se ha encontrado ahorros de hasta un 66% en costos económicos para proteger la misma cantidad de recursos naturales si se hace de forma coordinada entre varias naciones que si se hace como nacion individual [@@mazor_collaboration_2013].
+
+
+importancia de las areas protegidas
+areas protegidas… extension total en el pais
+representatividad por region
+representatividad por ecosistema
+mantienen habitat no modificados por el hombre (preservados)
+varias especies que se espera que se vean beneficiadas, pero no se sabe si es suficiente
+areas protegidas se encuentran fragmentadas en el pais(muy separadas unas de otras)
+
+Areas verdes informales como parte de corredores
+
+podemos hacernos una idea de los cambios mediante modelacion de nicho
+
+#POR QUE ESTE PROYECTO?
+
+Existen numerosos ejemplos de estudios en los cuales se estudian los corredores potenciales de una o unas pocas especies [@alagador_climate_2016; @gregory2014forecasts ; @cushman2013evaluating], pero hay pocos casos que han trabajado con varias especies y en estos trabajos se a realizado a una escala muy local [@beier2007linkage]. Recientemente se ha acuñado el termino enlace [@beier2008forks], para definir el conscenso de los corredores biologicos de multiples especies, lo cual permitiria planificar para la conservacion de diversidad y no solo de especies en particular. A persar de la existencia de este concepto, se han realizado muy pocos estudios al respecto.
+
+Este proyecto propone considerar la modelación de distribución actual de especies, la distribución potencial de especies considerando escenarios de cambio climático [@IPCCWG1PhysicalStocker2013] y la modelación basada en agentes [@valbuena_agent-based_2010], para determinar la posibilidad de dispersión de las especies desde la distribución actual y la potencial en el futuro. Se generarán estos modelos para chile y para todos los paises del cono sur, y se generaran concensos para ambos escenarios para determinar si los corredores resultantes son los mismos.
+
+##Escenarios
+
+* Chile planifica solo
+* Paises del conosur planifican en conjunto
+
+#Objetivo general
+
+Desarrollar una metodología estadística robusta que sostenga la creación y aplicación de un software libre que permita el estudio de los corredores biológicos necesarios para la dispersión de las especies desde su distribución actual a la futura, considerando  todos los casos necesarios por especie y por región. 
+Probar estas metodologías se utilizarán X especies presentes en Chile.
+
+Analizar si dado el uso de suelo actual de Chile, es posible que las especies estudiadas utilicen sus nuevos rangos y si las rutas propuestas son posibles.
+ 
+#Métodos
+
+El objetivo principal de este proyecto será, más que el estudio de casos particulares, el desarrollo de una metodología estadística robusta, y el desarrollo de un software libre que permita la aplicación de estos análisis en todos los casos necesarios.  El software se desarrollara como una extensión de R, su función será el modelar la distribución de una especie bajo condiciones actuales, proyectar esta distribución a escenarios futuros de acuerdo a modelos de la IPCC, y utilizando modelos basados en agentes, predecir las rutas más factibles de migración de estas especies para llegar a sus nuevos rangos.
+ 
+El segundo objetivo es probar estas metodologías se utilizarán X especies presentes en Chile.
+ 
+Se generará una base de datos con la totalidad de especies de Fauna terrestre de Chile (No migratorias) esta base de datos tendrá las siguientes características:
+ 
+-       El área (kms cuadrados) de su rango de acuerdo a IUCN
+-       El centroide de su distribución
+-       La categoría de conservación de acuerdo a la IUCN como variable ordinal (En peligro crítico, En peligro (EN), Vulnerable (VU), Casi amenazada (NT), Preocupación menor (LC))
+-        Phylum de cada especie
+ 
+Luego de generar esta base de datos se clasificaran las especies en cinco grupos usando agrupación de k-means. Posterior a eso se caracterizará cada grupo y se seleccionarán aleatoriamente X especies por cada grupo para ser modelada.
+
+El tercer objetivo de este proyecto es el ver si dado el uso de suelo actual de Chile, es posible que las especies estudiadas utilicen sus nuevos rangos y si las rutas propuestas son posibles.
+ 
+ 
+#Pasos [@alagador_shifting_2014]:
+
+1.- Crear indices de idoneidad de habitat
+2.- Habilidad de dispersión de las especies
+3.- Metas de representatividad de especies
+4.- Costo y presupuesto
+5.- Optimización
+
+Extracción de presencias (mapr)
+Extracción de datos climáticos (GetData raster)
+centroid {geosphere}
+
+
+
+Connectivity Planning to Address Climate Change
+
+
+
+In the past, species moved great distances relatively unim-
+peded in response to climatic change (Parmesan & Yohe
+2003; Martinez-Meyer et al. 2004). Given the rate of pro-
+jected future climate change, it is likely species will need
+to move farther in the 21
+st
+century (Schloss et al. 2012),
+and they may encounter substantial anthropogenic bar-
+riers that were not present in the past (Sanderson
+et al. 2002). Thus, maintaining connectivity—the degree
+to which a landscape facilitates the movement of or-
+ganisms (Tischendorf & Fahrig 2000)—is the most fre-
+quently recommended strategy for conserving species
+diversity in a changing climate (Heller & Zavaleta 2009).
+However, traditional connectivity models are used to
+identify areas that facilitate species movements at one
+point in time between their current habitats and within
+their current distributions (Crooks & Sanjayan 2006;
+Hannah 2011). Thus, these models cannot identify areas
+that would allow species to track climate-driven range
+shifts of key attributes of their habitats. We focused
+instead on connectivity that enables species—and their
+component populations—to move among suitable areas
+and to newly suitable areas over time as climate changes
+(Hannah 2011)
+
+ 
+#Referencias
