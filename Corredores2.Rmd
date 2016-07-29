@@ -1,5 +1,5 @@
 ---
-title: 'Corredores biologicos y cambio climático en el cono sur'
+title: 'Corredores biológicos en el cono sur bajo el contexto de cambio climático utilizando modelación basada en agentes'
 author: "Derek Corcoran"
 date: "`r Sys.Date()`"
 output: pdf_document
@@ -16,30 +16,19 @@ Las variables que determinan y limitan de la distribución de una especie pueden
 
 Una herramienta ampliamente utilizada para el estudio de los rangos geográficos de las especies es la modelación de distribución de especies [@hirzel_habitat_2008; @peterson_ecological_2011; @soberon_grinnellian_2007]. Esta metodología que fue desarrollada en 1984 [@gillison1984gradient], además de ser utilizada para generar distribuciones actuales, se ha ocupado para predecir las distribuciones potenciales de las especies producto del cambio climático bajo distintos escenarios propuestos para el futuro [@baker_role_2000; maiorano_building_2013].
 
-Bajo esta línea de estudio, el cambio climático y la fragmentación del hábitat se combinan formando una nueva problemática. Por efecto del cambio climático se predice que las especies cambien su área de distribución [@chen_rapid_2011], sin embargo es necesario que se dispersen hacia esta nueva área de distribucion potencial que ha de ser modelada. Debido a la presencia de hábitats fragmentados producto del proceso de urbanización, industrialización o cambios de uso de suelo, las especies no siempre podrán llegar a esta nueva área óptima. Para evitar problemas de conservación de especies debido a que estas no puedan dispersarse a areas optimas futuras, se requiere de corredores biológicos [@nunez_connectivity_2013; @rosenberg_biological_1997]. Estos corredores conectarian areas de distribucion actual con areas de distribucion potencial futura, lo cual tambien debe ser modelado para considerar las necesidades de habitat la especie, las variables que una especie pude soportar, la capacidad y tasa de dispersi?n, entre otros factores. Recientemente  una revisión a los métodos utilizados para la modelación espacial de corredores biologicos establecio....
+Bajo esta línea de estudio, el cambio climático y la fragmentación del hábitat se combinan formando una nueva problemática. Por efecto del cambio climático se predice que las especies cambien su área de distribución [@chen_rapid_2011], sin embargo es necesario que se dispersen hacia esta nueva área de distribucion potencial que ha de ser modelada. Debido a la presencia de hábitats fragmentados producto del proceso de urbanización, industrialización o cambios de uso de suelo, las especies no siempre podrán llegar a esta nueva área óptima. Para evitar problemas de conservación de especies debido a que estas no puedan dispersarse a areas optimas futuras, se requiere de corredores biológicos [@nunez_connectivity_2013; @rosenberg_biological_1997]. Estos corredores conectarian areas de distribucion actual con areas de distribucion potencial futura, lo cual tambien debe ser modelado para considerar las necesidades de habitat la especie, las variables que una especie pude soportar, la capacidad y tasa de dispersión, entre otros factores. *Recientemente  una revisión a los métodos utilizados para la modelación espacial de corredores biologicos establecio....*
 
 
 #Herramientas actuales de conservacion: las areas protegidas
 
-El concepto de "?rea protegida" se define en Chile como un ?rea definida geogr?ficamente que ha sido designada o regulada y administrada con la finalidad de alcanzar objetivos espec?ficos de conservaci?n (MINISTERIO DE RELACIONES EXTERIORES.Promulga Convenio sobre la Diversidad Biol?gica, adoptado el 5 de junio de 1992 en R?o de Janeiro, Rep?blica Federativa de Brasil. 1995).El Sistema Nacional de Areas Protegidas del Estado de Chile o SNASPE contempla 102 unidades de protecci?n abarcando un total de 14.715.570 ha que representan un 19,3% de la superficie nacional (Gerencia de ?reas Silvestres Protegidas Corporaci?n Nacional Forestal.2015. Restauraci?n ecol?gica en ?reas Silvestres Protegidas del Estado:Experiencias y desaf?os que contribuyen a la conservaci?n de la diversidad biol?gica del pa?s). Dentro de estas areas existen tres entidades adminstradas por el Estado a cargo de la Corporaci?n Nacional Forestal, CONAF: los Parques Nacionales que buscan proteccion y conservacion de ambientes particulares, las Reservas Nacionales que conservan en base a la utilizaci?n de recursos y los Monumentos Naturales que intentan conservar objetos espec?ficos o especies definidas en los cuales solo se puedde realizar investigacion cientifica o inspecciones gubernamentales (MINISTERIO DE RELACIONES EXTERIORES  T?tulo: CONVENCION PARA LA PROTECCION DE LA FLORA, LA FAUNA Y LAS BELLEZAS ESCENICAS NATURALES DE AMERICA 1967). Los Parques Nacionales abarcan una superfice nacional de 12,1%, las Reservas Nacionales 7,1% y los Monumentos Naturales solo un 0,04% (Gerencia de ?reas Silvestres Protegidas Corporaci?n Nacional Forestal.2015. Restauraci?n ecol?gica en ?reas Silvestres Protegidas del Estado:Experiencias y desaf?os que contribuyen a la conservaci?n de la diversidad biol?gica del pa?s).
+El concepto de **área protegida** se define en Chile como un área definida geográficamente que ha sido designada o regulada y administrada con la finalidad de alcanzar objetivos específicos de conservación [@DiversidadBiologica1995]. El Sistema Nacional de áreas Protegidas del Estado de Chile o SNASPE contempla 102 unidades de protección abarcando un total de 14.715.570 ha que representan un 19,3% de la superficie nacional [@MedioAmbiente1995]. Dentro de estas areas existen tres entidades adminstradas por el Estado a cargo de la Corporación Nacional Forestal, CONAF: los Parques Nacionales que buscan protección y conservacion de ambientes particulares, las Reservas Nacionales que conservan en base a la utilización de recursos y los Monumentos Naturales que intentan conservar objetos específicos o especies definidas en los cuales solo se puedde realizar investigacion cientifica o inspecciones gubernamentales [@ConvencionFloraFauna1967]. Los Parques Nacionales abarcan una superfice nacional de 12,1%, las Reservas Nacionales 7,1% y los Monumentos Naturales solo un 0,04% [@CONAF_Restauracion_2015].
 
-A pasar de los intentos por conservar en el pa?s, s?lo tomando en cuenta condiciones actuales, se ha determinado que aproximadamente un 13% de las especies chilenas no se encuentran consideradas por las áreas protegidas de Chile [@marquet_how_2004; tognelli_how_2008]. Junto con esto, las soluciones que se toman a nivel nacional pueden ser ineficientes comparativamente con soluciones a nivel regional [@levin_biodiversity_2014; @mazor_collaboration_2013; mazor_large-scale_2014], donde se ha encontrado ahorros de hasta un 66% en costos económicos para proteger la misma cantidad de recursos naturales si se hace de forma coordinada entre varias naciones que si se hace como nacion individual [@@mazor_collaboration_2013].
+A pasar de los intentos por conservar en el país, sólo tomando en cuenta condiciones actuales, se ha determinado que aproximadamente un 13% de las especies chilenas no se encuentran consideradas por las áreas protegidas de Chile [@marquet_how_2004; tognelli_how_2008]. Junto con esto, las soluciones que se toman a nivel nacional pueden ser ineficientes comparativamente con soluciones a nivel regional [@levin_biodiversity_2014; @mazor_collaboration_2013; mazor_large-scale_2014], donde se ha encontrado ahorros de hasta un 66% en costos económicos para proteger la misma cantidad de recursos naturales si se hace de forma coordinada entre varias naciones que si se hace como nacion individual [@mazor_collaboration_2013].
 
-Posibles soluciones a esta descoordinacion de esfuerzos se han descrito en torno a la creaci?n y mantenci?n de areas protegidas privadas (Sep?lveda y Villarroel 1995, Sep?lveda 1998) y la necesidad de conectividad entre ellas de forma fisica o funcional para asegurar recursos que puedan sustentar poblaciones viables (Simonetti y Acosta 2002, Simonetti et al. 2002). Estas ?reas
-podr?an comprender parques privados de mayores extenciones para conservaci?n...
-la acci?n de los due?os de tierras o importando mayormente la extensi?n de esta (Kamal et al Biodivers Conserv (2014) 23:2689-2704), contemplando campos de cultivos y jardines de casas (Gaston et al., 2005; Thompson et al.,2003). 
+Posibles soluciones a esta descoordinacion de esfuerzos se han descrito en torno a la creación y mantención de areas protegidas privadas [@pauchard2002protected] y la necesidad de conectividad entre ellas de forma fisica o funcional para asegurar recursos que puedan sustentar poblaciones viables [@simonetti2002conservando]. Estas áreas
+podrían comprender parques privados de mayores extensiones para conservación...
+la acción de los dueños de tierras o importando mayormente la extensión de esta [@kamal2014should], contemplando campos de cultivos y jardines de casas (Gaston et al., 2005; Thompson et al.,2003). 
 parques y sitios abandonados (J.-P.L. Savard et al. / Landscape and Urban Planning 48 (2000) 131?142), (Gibson, 1998; Woodward et al., 2003). en estudios de biodiversidad urbana ya han demostrado que existe cierta conecctividad entre estas ?reas ya q por ejemplo en Inglatera no se observan diferecias en la abundancia y riqueza de species de visitantes de flores no mostraba diferencias entre ambientes urbanos, los campos de cultivo y  reservas naturales (Where is the UK's pollinator biodiversity? The importance of urban areas for flower-visiting insects. Katherine C. R. Baldock, Mark A. Goddard, Damien M. Hicks, William E. Kunin, Nadine Mitschunas, Lynne M. Osgathorpe, Simon G. Potts, Kirsty M. Robertson, Anna V. Scott, Graham N. Stone, Ian P. Vaughan, Jane Memmott Proc. R. Soc. B 2015 282 20142849; DOI: 10.1098/rspb.2014.2849. Published 11 February 2015), ya que se necesitar?a ciertos factores del habitat para poder movilizarse entre gradientes urbano-rurales (P.G. Angold et al. / Science of the Total Environment 360 (2006) 196-204)
-
-
-
-
-
-
-
-
-
-
-
 
 *modelar de distribucion de nicho actual de 50 especies nativas en chile no migratorias, modelar la distribucion de nicho de las mismas 50 especies con las condiciones futuras determinadas por la IUCN y ddise?ar una estrategia de potenciales corredors biologicos que unan y permitan la dispersi?n de especies desde una distribuci?n a la otra, cosiderando dntro de la planificacion  el posible movimiento de animales utilizando rutas por fuera del pais*
 
@@ -136,5 +125,14 @@ component populations—to move among suitable areas
 and to newly suitable areas over time as climate changes
 (Hannah 2011)
 
- 
+#Planificacion
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(plan)
+key <- c(1:4)
+description <- c("Preparacion base de datos", "Clasificacion de especies", "Modelacion distribucion actual", "modelacion distribucion futura", "Desarrollo modelos basados en agentes", "Generación de corredores para Chile")
+data("gantt")
+plot(gantt)
+```
+
 #Referencias
