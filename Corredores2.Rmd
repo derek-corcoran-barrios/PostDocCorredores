@@ -2,7 +2,9 @@
 title: 'Corredores biológicos en el cono sur bajo el contexto de cambio climático utilizando modelación basada en agentes'
 author: "Derek Corcoran"
 date: "`r Sys.Date()`"
-output: pdf_document
+output: 
+  pdf_document:
+    fig_caption: yes
 bibliography: bibliography.bib
 ---
 
@@ -127,12 +129,50 @@ and to newly suitable areas over time as climate changes
 
 #Planificacion
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
+```{r, echo=FALSE, message=FALSE, warning=FALSE, out.extra='angle=90', out.width='10in', fig.width=14, fig.height=9, cache = TRUE}
 library(plan)
-key <- c(1:4)
-description <- c("Preparacion base de datos", "Clasificacion de especies", "Modelacion distribucion actual", "modelacion distribucion futura", "Desarrollo modelos basados en agentes", "Generación de corredores para Chile")
+library(lubridate)
 data("gantt")
-plot(gantt)
+description <- c("Preparacion base de datos", "Clasificacion de especies", "Modelacion distribucion actual", "Modelacion distribucion futura", "Congreso Socecol", "Desarrollo e implementación\n del Packete BioCorridoR para R" ,"Desarrollo modelos basados\n en agentes", "Generación de corredores\n para Chile", "Asistencia Congreso UseR!", "Publicación publicación sobre Paquete R","Generacion de corredores\n Para Sudamerica", "Publicación corredores\n de Chile" , "Desarrollo de plataforma Shinny", "Publicación concenso corredores\n Chile, Sudamerica", "Congreso")
+start <- as.POSIXct(dmy(c("01/03/2017","01/03/2017", "01/07/2017", "01/07/2017","01/11/2017","01/07/2017", "02/01/2018", "02/01/2018", "15/06/2018", "1/10/2018", "01/01/2019", "02/01/2019", "01/08/2019", "01/09/2019", "01/10/2019")))
+end <- as.POSIXct(dmy(c("30/06/2017","30/06/2017", "31/12/2017","31/12/2017","15/11/2017","31/12/2018", "31/07/2018", "31/07/2018", "7/07/2018", "31/12/2018", "31/07/2018", "30/04/2019", "30/10/2019", "31/12/2019", "15/10/2019")))
+
+key <- c(1:length(description))
+
+done <- rep(0, length(description))
+
+neededBy <- rep(NA, length(description))
+
+GanttPostDoc <- list(key, description, start, end, done, neededBy)
+
+names(GanttPostDoc) <- names(gantt)
+class(GanttPostDoc) <- c("gantt")
+
+plot(GanttPostDoc, time.labels.by="4 months", time.lines.by="1 year", grid.lty = 2)
+```
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, cache = TRUE}
+library(plan)
+library(lubridate)
+data("gantt")
+description <- c("Preparacion base de datos", "Clasificacion de especies", "Modelacion distribucion actual", "Modelacion distribucion futura", "Congreso Socecol", "Desarrollo e implementación\n del Packete BioCorridoR para R" ,"Desarrollo modelos basados\n en agentes", "Generación de corredores\n para Chile", "Asistencia Congreso UseR!", "Publicación publicación sobre Paquete R","Generacion de corredores\n Para Sudamerica", "Publicación corredores\n de Chile" , "Desarrollo de plataforma Shinny", "Publicación concenso corredores\n Chile, Sudamerica", "Congreso")
+start <- as.POSIXct(dmy(c("01/03/2017","01/03/2017", "01/07/2017", "01/07/2017","01/11/2017","01/07/2017", "02/01/2018", "02/01/2018", "15/06/2018", "1/10/2018", "01/01/2019", "02/01/2019", "01/08/2019", "01/09/2019", "01/10/2019")))
+end <- as.POSIXct(dmy(c("30/06/2017","30/06/2017", "31/12/2017","31/12/2017","15/11/2017","31/12/2018", "31/07/2018", "31/07/2018", "7/07/2018", "31/12/2018", "31/07/2018", "30/04/2019", "30/10/2019", "31/12/2019", "15/10/2019")))
+
+key <- c(1:length(description))
+
+done <- rep(0, length(description))
+
+neededBy <- rep(NA, length(description))
+
+GanttPostDoc <- list(key, description, start, end, done, neededBy)
+
+names(GanttPostDoc) <- names(gantt)
+class(GanttPostDoc) <- c("gantt")
+language <- 
+Sys.setlocale("LC_TIME","es_ES")
+plot(GanttPostDoc)
 ```
 
 #Referencias
