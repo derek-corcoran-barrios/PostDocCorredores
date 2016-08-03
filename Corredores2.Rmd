@@ -1,105 +1,77 @@
 ---
-title: 'Corredores biológicos en el cono sur bajo el contexto de cambio climático utilizando modelación basada en agentes'
+title: Corredores biológicos en el cono sur bajo el contexto de cambio climático utilizando
+  modelación basada en agentes
 author: "Derek Corcoran"
-date: "`r Sys.Date()`"
-output: 
+date: '`r Sys.Date()`'
+output:
+  word_document: default
   pdf_document:
     fig_caption: yes
 bibliography: bibliography.bib
 ---
 
-#Introducción
+#Formulación de la Propuesta
+##Introducción
 
-La distribución actual de las especies no será la misma en el futuro, por lo que es importante que las áreas protegidas cubran tanto una porción de la distribución actual como de la futura. Además, es importante que las especies puedan moverse desde los hábitats  presentes hasta los que potencialmente utilizarían en el futuro. No es suficiente con que existan ambas áreas, además no debieran existir barreras al movimiento de las especies emtre una y otra.
+Uno de los principales objetivos de la ecología es el entender la distribución de los organismos [@elton_animal_1927] lo que se define como los límites geográficos de su presencia, y donde es generalmente reconocido que la extensión del rango de una especie es proporcional a la amplitud de su nicho [@gaston_structure_2003; @peterson_ecological_2011]. 
 
-Uno de los principales objetivos de la ecología es el entender la distribución de los organismos [@elton_animal_1927] lo que se define como los límites geográficos de su presencia,y donde es generalmente reconocido que la extensión del rango de una especie es proporcional a la amplitud de su nicho [@gaston_structure_2003; @peterson_ecological_2011]. 
-
-Las variables que determinan y limitan de la distribución de una especie pueden ser tanto bióticos (incapacidad de reproducirse o sobrevivir en ciertas condiciones) o bióticos (influenciado por depredadores, parásitos y/o mutualistas) [@gaston_geographic_2009]. A pesar de ser una característica básica de los organismos es extremadamente complejo de estudiar, en parte por ser un concepto dinámico ya que el rango de una especie puede cambiar por alteriaciones en los factores que limitan el rango o debido a cambios evolutivos de la especie que modifican estos límites [@holt_evolutionary_2003; @macarthur_geographical_1972; @macarthur_theory_1968]. Dentro de los factores que más han modificado el rango de dispersión de especies se encuentran la sobrexplotación de los recursos naturales, el cambio climático global [@parmesan_beyond_2013; @parmesan_poleward_1999], la fragmentación de hábitat [@bright_habitat_1993], y la introducción de especies entre otras [@mooney_evolutionary_2001]. Es por esto que se le atribuye al ser humano la responsabilidad de ser uno de los principales moduladores del rango de las especies [@vitousek_beyond_1994].
+Las variables que determinan y limitan de la distribución de una especie pueden ser tanto bióticos (incapacidad de reproducirse o sobrevivir en ciertas condiciones) o bióticos (influenciado por depredadores, parásitos y/o mutualistas) [@gaston_geographic_2009]. A pesar de ser una característica básica de los organismos es extremadamente complejo de estudiar, en parte por ser un concepto dinámico ya que el rango de una especie puede cambiar por alteraciones en los factores que limitan el rango o debido a cambios evolutivos de la especie que modifican estos límites [@holt_evolutionary_2003; @macarthur_geographical_1972; @macarthur_theory_1968]. Dentro de los factores que más han modificado el rango de dispersión de especies se encuentran la sobrexplotación de los recursos naturales, el cambio climático global [@parmesan_beyond_2013; @parmesan_poleward_1999, @lenoir2008significant], la fragmentación de hábitat [@bright_habitat_1993] y la introducción de especies [@mooney_evolutionary_2001]. Es por esto que se le atribuye al ser humano la responsabilidad de ser uno de los principales moduladores del rango de las especies [@vitousek_beyond_1994].
 
 Una herramienta ampliamente utilizada para el estudio de los rangos geográficos de las especies es la modelación de distribución de especies [@hirzel_habitat_2008; @peterson_ecological_2011; @soberon_grinnellian_2007]. Esta metodología que fue desarrollada en 1984 [@gillison1984gradient], además de ser utilizada para generar distribuciones actuales, se ha ocupado para predecir las distribuciones potenciales de las especies producto del cambio climático bajo distintos escenarios propuestos para el futuro [@baker_role_2000; maiorano_building_2013].
 
-Bajo esta línea de estudio, el cambio climático y la fragmentación del hábitat se combinan formando una nueva problemática. Por efecto del cambio climático se predice que las especies cambien su área de distribución [@chen_rapid_2011], sin embargo es necesario que se dispersen hacia esta nueva área de distribucion potencial que ha de ser modelada. Debido a la presencia de hábitats fragmentados producto del proceso de urbanización, industrialización o cambios de uso de suelo, las especies no siempre podrán llegar a esta nueva área óptima. Para evitar problemas de conservación de especies debido a que estas no puedan dispersarse a areas optimas futuras, se requiere de corredores biológicos [@nunez_connectivity_2013; @rosenberg_biological_1997]. Estos corredores conectarian areas de distribucion actual con areas de distribucion potencial futura, lo cual tambien debe ser modelado para considerar las necesidades de habitat la especie, las variables que una especie pude soportar, la capacidad y tasa de dispersión, entre otros factores. *Recientemente  una revisión a los métodos utilizados para la modelación espacial de corredores biologicos establecio....*
+Bajo esta línea de estudio, el cambio climático y la fragmentación del hábitat se combinan formando una nueva problemática. Por efecto del cambio climático se predice que las especies cambien su área de distribución [@chen_rapid_2011, @lenoir2008significant], sin embargo es necesario que se dispersen hacia esta nueva área de distribucion potencial que ha de ser modelada. Para evitar problemas de conservación de especies debido a que estas no puedan dispersarse a áreas óptimas futuras, se requiere de corredores biológicos [@nunez_connectivity_2013; @rosenberg_biological_1997]. Debido a la presencia de hábitats fragmentados producto del proceso de urbanización, industrialización o cambios de uso de suelo, las especies no siempre podrán llegar a esta nueva área óptima. Esto podría incluso ser verse incrementado, ya que algunas actividades económicas tales como la agricultura, también deberán modificar su area de acción para acomodarse a estas nuevas condiciones climáticas y con esto utilizar nuevas áreas de distribución o corredores de estas especies[@hannah2013climate]. Estos corredores conectarían áreas de distribución actual con áreas de distribución potencial futura, así como también permitirán el flujo genético entre poblaciones distantes, lo cual también debe ser modelado para considerar las necesidades de hábitat la especie, las variables que una especie puede soportar, la capacidad y tasa de dispersión, entre otros factores. La planificación y creación de estos corredores biológicos corresponden a medidas adaptativas frente a las variaciones ambientales ya que son acciones que reducen los impactos al cambio climático global [@book_499349]. 
 
 
-#Herramientas actuales de conservacion: las areas protegidas
+##Herramientas actuales de conservacion: las áreas protegidas
 
-El concepto de **área protegida** se define en Chile como un área definida geográficamente que ha sido designada o regulada y administrada con la finalidad de alcanzar objetivos específicos de conservación [@DiversidadBiologica1995]. El Sistema Nacional de áreas Protegidas del Estado de Chile o SNASPE contempla 102 unidades de protección abarcando un total de 14.715.570 ha que representan un 19,3% de la superficie nacional [@MedioAmbiente1995]. Dentro de estas areas existen tres entidades adminstradas por el Estado a cargo de la Corporación Nacional Forestal, CONAF: los Parques Nacionales que buscan protección y conservacion de ambientes particulares, las Reservas Nacionales que conservan en base a la utilización de recursos y los Monumentos Naturales que intentan conservar objetos específicos o especies definidas en los cuales solo se puedde realizar investigacion cientifica o inspecciones gubernamentales [@ConvencionFloraFauna1967]. Los Parques Nacionales abarcan una superfice nacional de 12,1%, las Reservas Nacionales 7,1% y los Monumentos Naturales solo un 0,04% [@CONAF_Restauracion_2015].
+El concepto de "área protegida"" se define en Chile como un área definida geográficamente que ha sido designada o regulada y administrada con la finalidad de alcanzar objetivos específicos de conservación [@DiversidadBiologica1995]. El Sistema Nacional de áreas Protegidas del Estado de Chile o SNASPE contempla 102 unidades de protección abarcando un total de 14.715.570 ha que representan un 19,3% de la superficie nacional [@MedioAmbiente1995]. Dentro de estas areas existen tres entidades adminstradas por el Estado a cargo de la Corporación Nacional Forestal, CONAF: 1) los Parques Nacionales que buscan protección y conservacion de ambientes particulares, 2) las Reservas Nacionales que conservan en base a la utilización de recursos y 3) los Monumentos Naturales que intentan conservar objetos específicos o especies definidas en los cuales solo se puede realizar investigacion cientifica o inspecciones gubernamentales [@ConvencionFloraFauna1967]. Los Parques Nacionales abarcan una superfice nacional de 12,1%, las Reservas Nacionales 7,1% y los Monumentos Naturales solo un 0,04% [@CONAF_Restauracion_2015].
 
-A pasar de los intentos por conservar en el país, sólo tomando en cuenta condiciones actuales, se ha determinado que aproximadamente un 13% de las especies chilenas no se encuentran consideradas por las áreas protegidas de Chile [@marquet_how_2004; tognelli_how_2008]. Junto con esto, las soluciones que se toman a nivel nacional pueden ser ineficientes comparativamente con soluciones a nivel regional [@levin_biodiversity_2014; @mazor_collaboration_2013; mazor_large-scale_2014], donde se ha encontrado ahorros de hasta un 66% en costos económicos para proteger la misma cantidad de recursos naturales si se hace de forma coordinada entre varias naciones que si se hace como nacion individual [@mazor_collaboration_2013].
+A pasar de los intentos por conservar en el país, sólo tomando en cuenta condiciones actuales, se ha determinado que aproximadamente un 13% de las especies chilenas no se encuentran consideradas por las áreas protegidas de Chile [@marquet_how_2004; tognelli_how_2008]. Junto con esto, las soluciones que se toman a nivel nacional pueden ser ineficientes comparativamente con soluciones a nivel regional [@levin_biodiversity_2014; @mazor_collaboration_2013; mazor_large-scale_2014], donde se ha encontrado ahorros de hasta un 66% en costos económicos para proteger la misma cantidad de recursos naturales si se hace de forma coordinada entre varias naciones que si se hace como nación individual [@mazor_collaboration_2013].
 
 Posibles soluciones a esta descoordinacion de esfuerzos se han descrito en torno a la creación y mantención de areas protegidas privadas [@pauchard2002protected] y la necesidad de conectividad entre ellas de forma fisica o funcional para asegurar recursos que puedan sustentar poblaciones viables [@simonetti2002conservando]. Estas áreas
-podrían comprender parques privados de mayores extensiones para conservación...
-la acción de los dueños de tierras o importando mayormente la extensión de esta [@kamal2014should], contemplando campos de cultivos y jardines de casas (Gaston et al., 2005; Thompson et al.,2003). 
-parques y sitios abandonados (J.-P.L. Savard et al. / Landscape and Urban Planning 48 (2000) 131?142), (Gibson, 1998; Woodward et al., 2003). en estudios de biodiversidad urbana ya han demostrado que existe cierta conecctividad entre estas ?reas ya q por ejemplo en Inglatera no se observan diferecias en la abundancia y riqueza de species de visitantes de flores no mostraba diferencias entre ambientes urbanos, los campos de cultivo y  reservas naturales (Where is the UK's pollinator biodiversity? The importance of urban areas for flower-visiting insects. Katherine C. R. Baldock, Mark A. Goddard, Damien M. Hicks, William E. Kunin, Nadine Mitschunas, Lynne M. Osgathorpe, Simon G. Potts, Kirsty M. Robertson, Anna V. Scott, Graham N. Stone, Ian P. Vaughan, Jane Memmott Proc. R. Soc. B 2015 282 20142849; DOI: 10.1098/rspb.2014.2849. Published 11 February 2015), ya que se necesitar?a ciertos factores del habitat para poder movilizarse entre gradientes urbano-rurales (P.G. Angold et al. / Science of the Total Environment 360 (2006) 196-204)
+podrían comprender parques privados de mayores extensiones para conservación, la acción de los dueños de tierras [@kamal2014should], contemplando campos de cultivos e incluso jardines de casas [@gaston2005urban; @thompson2003urban] , parques y hasta sitios abandonados [@savard2000biodiversity], (Gibson, 1998; Woodward et al., 2003). Estudios de biodiversidad urbana ya han demostrado que existe cierta conectividad entre estas áreas ya que por ejemplo en Inglatera no se han observado diferencias en la abundancia y riqueza de especies de visitantes de flores entre ambientes urbanos, campos de cultivo y reservas naturales [@baldock2015uk].
 
-*modelar de distribucion de nicho actual de 50 especies nativas en chile no migratorias, modelar la distribucion de nicho de las mismas 50 especies con las condiciones futuras determinadas por la IUCN y ddise?ar una estrategia de potenciales corredors biologicos que unan y permitan la dispersi?n de especies desde una distribuci?n a la otra, cosiderando dntro de la planificacion  el posible movimiento de animales utilizando rutas por fuera del pais*
+Una posible planificación para el establecimiento de corredores biológicos debiera abarcar estos factores para solventar poblaciones viables
 
 
-importancia de las areas protegidas
-areas protegidas… extension total en el pais
-representatividad por region
-representatividad por ecosistema
-mantienen habitat no modificados por el hombre (preservados)
-varias especies que se espera que se vean beneficiadas, pero no se sabe si es suficiente
-areas protegidas se encuentran fragmentadas en el pais(muy separadas unas de otras)
-
-Areas verdes informales como parte de corredores
-
-podemos hacernos una idea de los cambios mediante modelacion de nicho
-
-#POR QUE ESTE PROYECTO?
-
-Existen numerosos ejemplos de estudios en los cuales se estudian los corredores potenciales de una o unas pocas especies [@alagador_climate_2016; @gregory2014forecasts ; @cushman2013evaluating], pero hay pocos casos que han trabajado con varias especies y en estos trabajos se a realizado a una escala muy local [@beier2007linkage]. Recientemente se ha acuñado el termino enlace [@beier2008forks], para definir el conscenso de los corredores biologicos de multiples especies, lo cual permitiria planificar para la conservacion de diversidad y no solo de especies en particular. A persar de la existencia de este concepto, se han realizado muy pocos estudios al respecto.
+Existen numerosos ejemplos de estudios en los cuales se estudian los corredores potenciales de una o unas pocas especies [@alagador_climate_2016; @gregory2014forecasts ; @cushman2013evaluating], pero hay pocos casos que han trabajado con varias especies y en estos trabajos se ha realizado a una escala muy local [@beier2007linkage]. Recientemente se ha acuñado el término "enlace" para definir el conscenso de los corredores biológicos de multiples especies [@beier2008forks], lo cual permitiría planificar para la conservacion de diversidad y no sólo de especies en particular. 
 
 Este proyecto propone considerar la modelación de distribución actual de especies, la distribución potencial de especies considerando escenarios de cambio climático [@IPCCWG1PhysicalStocker2013] y la modelación basada en agentes [@valbuena_agent-based_2010], para determinar la posibilidad de dispersión de las especies desde la distribución actual y la potencial en el futuro. Se generarán estos modelos para chile y para todos los paises del cono sur, y se generaran concensos para ambos escenarios para determinar si los corredores resultantes son los mismos.
 
-##Escenarios
 
-* Chile planifica solo
-* Paises del conosur planifican en conjunto
+###Objetivos
 
-#Objetivo general
+- Desarrollo de una metodología estadística robusta, y el desarrollo de un software libre en R que permita la aplicación de estos análisis en todos los casos necesarios. 
 
-Desarrollar una metodología estadística robusta que sostenga la creación y aplicación de un software libre que permita el estudio de los corredores biológicos necesarios para la dispersión de las especies desde su distribución actual a la futura, considerando  todos los casos necesarios por especie y por región. 
-Probar estas metodologías se utilizarán X especies presentes en Chile.
+- Probar las metodologías para 100 especies presentes en Chile.
 
-Analizar si dado el uso de suelo actual de Chile, es posible que las especies estudiadas utilicen sus nuevos rangos y si las rutas propuestas son posibles.
+- Analizar si dado el uso de suelo actual de Chile, es posible que las especies estudiadas utilicen sus nuevos rangos y si las rutas propuestas son posibles.
  
-#Métodos
 
-El objetivo principal de este proyecto será, más que el estudio de casos particulares, el desarrollo de una metodología estadística robusta, y el desarrollo de un software libre que permita la aplicación de estos análisis en todos los casos necesarios.  El software se desarrollara como una extensión de R, su función será el modelar la distribución de una especie bajo condiciones actuales, proyectar esta distribución a escenarios futuros de acuerdo a modelos de la IPCC, y utilizando modelos basados en agentes, predecir las rutas más factibles de migración de estas especies para llegar a sus nuevos rangos.
- 
-El segundo objetivo es probar estas metodologías se utilizarán X especies presentes en Chile.
- 
+##Métodos
+
+
 Se generará una base de datos con la totalidad de especies de Fauna terrestre de Chile (No migratorias) esta base de datos tendrá las siguientes características:
  
--       El área (kms cuadrados) de su rango de acuerdo a IUCN
--       El centroide de su distribución
--       La categoría de conservación de acuerdo a la IUCN como variable ordinal (En peligro crítico, En peligro (EN), Vulnerable (VU), Casi amenazada (NT), Preocupación menor (LC))
--        Phylum de cada especie
+- El área (kms cuadrados) de su rango de acuerdo a IUCN
+- El centroide de su distribución
+- La categoría de conservación de acuerdo a la IUCN como variable ordinal (En peligro crítico, En peligro (EN), Vulnerable (VU), Casi amenazada (NT), Preocupación menor (LC))
+- Phylum de cada especie
  
 Luego de generar esta base de datos se clasificaran las especies en cinco grupos usando agrupación de k-means. Posterior a eso se caracterizará cada grupo y se seleccionarán aleatoriamente X especies por cada grupo para ser modelada.
 
-El tercer objetivo de este proyecto es el ver si dado el uso de suelo actual de Chile, es posible que las especies estudiadas utilicen sus nuevos rangos y si las rutas propuestas son posibles.
+Se verificará si dado el uso de suelo actual de Chile, es posible que las especies estudiadas utilicen sus nuevos rangos y si las rutas propuestas son posibles.
  
  
-#Pasos [@alagador_shifting_2014]:
+##Pasos [@alagador_shifting_2014]:
 
-1.- Crear indices de idoneidad de habitat
-2.- Habilidad de dispersión de las especies
-3.- Metas de representatividad de especies
-4.- Costo y presupuesto
-5.- Optimización
-
-Extracción de presencias (mapr)
-Extracción de datos climáticos (GetData raster)
-centroid {geosphere}
-
-
+- Crear indices de idoneidad de habitat
+- Habilidad de dispersión de las especies
+- Metas de representatividad de especies
+- Costo y presupuesto
+- Optimización
 
 Connectivity Planning to Address Climate Change
-
-
 
 In the past, species moved great distances relatively unim-
 peded in response to climatic change (Parmesan & Yohe
@@ -133,9 +105,9 @@ and to newly suitable areas over time as climate changes
 library(plan)
 library(lubridate)
 data("gantt")
-description <- c("Preparacion base de datos", "Clasificacion de especies", "Modelacion distribucion actual", "Modelacion distribucion futura", "Congreso Socecol", "Desarrollo e implementación\n del Packete BioCorridoR para R" ,"Desarrollo modelos basados\n en agentes", "Generación de corredores\n para Chile", "Asistencia Congreso UseR!", "Publicación publicación sobre Paquete R","Generacion de corredores\n Para Sudamerica", "Publicación corredores\n de Chile" , "Desarrollo de plataforma Shinny", "Publicación concenso corredores\n Chile, Sudamerica", "Congreso")
-start <- as.POSIXct(dmy(c("01/03/2017","01/03/2017", "01/07/2017", "01/07/2017","01/11/2017","01/07/2017", "02/01/2018", "02/01/2018", "15/06/2018", "1/10/2018", "01/01/2019", "02/01/2019", "01/08/2019", "01/09/2019", "01/10/2019")))
-end <- as.POSIXct(dmy(c("30/06/2017","30/06/2017", "31/12/2017","31/12/2017","15/11/2017","31/12/2018", "31/07/2018", "31/07/2018", "7/07/2018", "31/12/2018", "31/07/2018", "30/04/2019", "30/10/2019", "31/12/2019", "15/10/2019")))
+description <- c("Preparacion base de datos", "Clasificacion de especies", "Modelacion distribucion actual", "Modelacion distribucion futura", "Congreso Socecol", "Desarrollo e implementación del\n Packete BioCorridoR para R" ,"Desarrollo modelos basados\n en agentes", "Generación de corredores\n para Chile", "Asistencia Congreso UseR!", "Publicación sobre Paquete R","Generacion de corredores\n Para Sudamerica", "Publicación corredores\n de Chile" , "Desarrollo de plataforma Shiny", "Publicación concenso corredores\n Chile, Sudamerica", "Congreso")
+start <- as.POSIXct(dmy(c("01/03/2017","01/03/2017", "01/07/2017", "01/07/2017","01/11/2017","01/07/2017", "02/01/2018", "02/01/2018", "15/06/2018", "1/10/2018", "01/01/2019", "02/01/2019", "01/08/2019", "01/09/2019")))
+end <- as.POSIXct(dmy(c("30/06/2017","30/06/2017", "31/12/2017","31/12/2017","15/11/2017","31/12/2018", "31/07/2018", "31/07/2018", "7/07/2018", "31/12/2018", "31/07/2018", "30/04/2019", "30/10/2019", "31/12/2019")))
 
 key <- c(1:length(description))
 
@@ -151,28 +123,50 @@ class(GanttPostDoc) <- c("gantt")
 plot(GanttPostDoc, time.labels.by="4 months", time.lines.by="1 year", grid.lty = 2)
 ```
 
+###Preparación base de datos:
+Recolección de caracteristicas y polígonos de distribución de todas las especies animales terrestres de Chile desde bases de datos digitales y extraccion de caracteristicas tales como área, centroide y estado de conservación entre otras.
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, cache = TRUE}
-library(plan)
-library(lubridate)
-data("gantt")
-description <- c("Preparacion base de datos", "Clasificacion de especies", "Modelacion distribucion actual", "Modelacion distribucion futura", "Congreso Socecol", "Desarrollo e implementación\n del Packete BioCorridoR para R" ,"Desarrollo modelos basados\n en agentes", "Generación de corredores\n para Chile", "Asistencia Congreso UseR!", "Publicación publicación sobre Paquete R","Generacion de corredores\n Para Sudamerica", "Publicación corredores\n de Chile" , "Desarrollo de plataforma Shinny", "Publicación concenso corredores\n Chile, Sudamerica", "Congreso")
-start <- as.POSIXct(dmy(c("01/03/2017","01/03/2017", "01/07/2017", "01/07/2017","01/11/2017","01/07/2017", "02/01/2018", "02/01/2018", "15/06/2018", "1/10/2018", "01/01/2019", "02/01/2019", "01/08/2019", "01/09/2019", "01/10/2019")))
-end <- as.POSIXct(dmy(c("30/06/2017","30/06/2017", "31/12/2017","31/12/2017","15/11/2017","31/12/2018", "31/07/2018", "31/07/2018", "7/07/2018", "31/12/2018", "31/07/2018", "30/04/2019", "30/10/2019", "31/12/2019", "15/10/2019")))
+###Clasificación de especies:
+Utilizando la base de datos previamente creada, se clasificará a las especies en cinco clusters para hacer un muestreo representativo de 20 especies dentro de cada uno de ellos, estas especies serán utilizadas para las modelaciones posteriores. 
 
-key <- c(1:length(description))
+###Modelación distribución actual:
+Para cada una de las especies seleccionadas se generará un modelo de distribución de especies basado en presencias filtradas de la base de datos del GBIF [@flemons2007web] y en características climáticas extraídas de Worldclim [@hijmans_very_2005]
 
-done <- rep(0, length(description))
+###Modelación distribución futura:
+Para cada una de las especies se proyectarán los modelos generados a condiciones futuras para determinar su distribución de acuerdo a los modelos de la IPCC
 
-neededBy <- rep(NA, length(description))
+###Congreso Socecol:
+Se presentarán los resultados de las modelaciones presentes y futuras en el congreso binacional de ecología
 
-GanttPostDoc <- list(key, description, start, end, done, neededBy)
+###Desarrollo modelos basados en agentes:
+Utilizando el programa Netlogo [@sklar2007netlogo], se generarán modelos basados en agentes para simular el desplazamiento de las especies desde sus rangos actuales a los predichos por los modelos de distribución de especies
 
-names(GanttPostDoc) <- names(gantt)
-class(GanttPostDoc) <- c("gantt")
-language <- 
-Sys.setlocale("LC_TIME","es_ES")
-plot(GanttPostDoc)
-```
+###Desarrollo e implementación del Packete BioCorridoR para R:
+Desarrollo de paquete para el entorno de R que tendrá funciones que permitirán generar análisis para cualquier grupo de especies deseado por usuarios para generar los mismos análisis generados por esta investigación.
+
+###Generación de corredores para Chile:
+Generación de corredores para Chile tomando en cuenta las rutas de desplazamiento más utilizadas por las especies seleccionadas. 
+
+###Asistencia Congreso UseR!:
+Presentación de la primera versión del paquete BioCorridoR en el congreso más importante de la comunidad de desarrolladores de R.
+
+###Publicación sobre paquete BioCorridoR:
+Se presentará el paquete BioCorridoR en el Journal of Statistical Sofware.
+
+###Generación de corredores para Sudamérica:
+Se probará un nuevo escenario donde las especies analizadas podrán utilizar como parte del corredor países vecinos, se evaluará las diferencias de efectividad de planificación nacional contrastada con planificación regional (Sudamérica).
+
+###Publicación corredores de Chile:
+Publicación de análisis de corredores biológicos concenso planificados para Chile.
+
+###Desarrollo de plataforma Shiny
+Desarrollo de paltaforma de Shiny Apps para ejemplificar e implementar uso interactivo de BioCorridoR
+
+###Publicación concenso corredores en Chile y Sudamerica
+Publicación de análisis de corredores biológicos concenso para el Cono sur y su comparación con los generados para Chile
+
+#Trabajo Adelantado
+
+Se han generado algoritmos para extraer poligonos de presencia de especies desde la pagina web de la IUCN, y a partir de ella extraer la información necesaria para la clasificación de especies, esto a sido testeado para los Mamíferos de Chile, posteriormente en base a esto se generó un nuevo algoritmo para extraer en base a esta tabla los puntos de presencia de estas epecies para la GBIF.
 
 #Referencias
