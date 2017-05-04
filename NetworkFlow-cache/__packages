@@ -1,0 +1,12 @@
+base
+knitr
+sp
+raster
+lattice
+RColorBrewer
+latticeExtra
+rasterVis
+rgbif
+ggplot2
+ggmap
+animation

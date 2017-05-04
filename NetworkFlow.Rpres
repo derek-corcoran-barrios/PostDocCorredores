@@ -1,0 +1,48 @@
+NetworkFlow
+========================================================
+author: Derek Corcoran
+date: 
+autosize: true
+
+Slide With Plot
+========================================================
+
+```{r, cache= TRUE, echo=FALSE}
+library(raster)
+prot <- stack("Prot.jpg")
+plotRGB(prot)
+```
+
+Restricciones
+========================================================
+
+Encontrar las cadenas de disperción, para cada especie:
+
+- Las cadenas no deben ser superpuestas (Dos cadenas no pueden usar la misma celda en el mismo año)
+- Usar solo celulas no transformadas con proteccion existente o prpouesta 
+
+- Tener al menos 35 cadenas, si no es posible, entonces el set con mayor numero de celdas posibles.
+
+
+El numero de Celdas propuestas para proteccion debe ser el menor posible.
+
+Slide With Code
+========================================================
+
+
+![gif](Mean_temp.gif)
+
+Slide With Code
+========================================================
+
+```{r, echo = FALSE, cache = TRUE}
+library(rgbif)
+library(ggmap)
+Huemul <- occ_search(scientificName = "Hippocamelus bisulcus")
+Huemul <- data.frame(lon =Huemul$data$decimalLongitude, lat = Huemul$data$decimalLatitude)
+saveRDS(Huemul, "Huemul.rds")
+
+myLocation <- c(-87.91931 , -33.86219 , -60.95829, 9.975522)
+SA <- get_map(myLocation, zoom = 3)
+ggmap(SA) +geom_point(data = Huemul, aes(x = lon, y = lat)) + ylim(c(-55, 10))
+```

@@ -29,7 +29,7 @@ El concepto de "área protegida"" se define en Chile como un área definida geog
 A pasar de los intentos por conservar en el país, sólo tomando en cuenta condiciones actuales, se ha determinado que aproximadamente un 13% de las especies chilenas no se encuentran consideradas por las áreas protegidas de Chile [@marquet_how_2004; tognelli_how_2008]. Junto con esto, las soluciones que se toman a nivel nacional pueden ser ineficientes comparativamente con soluciones a nivel regional [@levin_biodiversity_2014; @mazor_collaboration_2013; mazor_large-scale_2014], donde se ha encontrado ahorros de hasta un 66% en costos económicos para proteger la misma cantidad de recursos naturales si se hace de forma coordinada entre varias naciones que si se hace como nación individual [@mazor_collaboration_2013].
 
 Posibles soluciones a esta descoordinacion de esfuerzos se han descrito en torno a la creación y mantención de areas protegidas privadas [@pauchard2002protected] y la necesidad de conectividad entre ellas de forma fisica o funcional para asegurar recursos que puedan sustentar poblaciones viables [@simonetti2002conservando]. Estas áreas
-podrían comprender parques privados de mayores extensiones para conservación, la acción de los dueños de tierras [@kamal2014should], contemplando campos de cultivos e incluso jardines de casas [@gaston2005urban; @thompson2003urban] , parques y hasta sitios abandonados [@savard2000biodiversity], (Gibson, 1998; Woodward et al., 2003). Estudios de biodiversidad urbana ya han demostrado que existe cierta conectividad entre estas áreas ya que por ejemplo en Inglatera no se han observado diferencias en la abundancia y riqueza de especies de visitantes de flores entre ambientes urbanos, campos de cultivo y reservas naturales [@baldock2015uk].
+podrían comprender parques privados de mayores extensiones para conservación, la acción de los dueños de tierras [@kamal2014should], contemplando campos de cultivos e incluso jardines de casas [@gaston2005urban; @thompson2003urban] , parques y hasta sitios abandonados [@savard2000biodiversity; @gibson1998brownfield; @eyre2003beetles]. Estudios de biodiversidad urbana ya han demostrado que existe cierta conectividad entre estas áreas ya que por ejemplo en Inglatera no se han observado diferencias en la abundancia y riqueza de especies de visitantes de flores entre ambientes urbanos, campos de cultivo y reservas naturales [@baldock2015uk].
 
 Una posible planificación para el establecimiento de corredores biológicos debiera abarcar estos factores para solventar poblaciones viables
 
@@ -61,43 +61,6 @@ Se generará una base de datos con la totalidad de especies de Fauna terrestre d
 Luego de generar esta base de datos se clasificaran las especies en cinco grupos usando agrupación de k-means. Posterior a eso se caracterizará cada grupo y se seleccionarán aleatoriamente X especies por cada grupo para ser modelada.
 
 Se verificará si dado el uso de suelo actual de Chile, es posible que las especies estudiadas utilicen sus nuevos rangos y si las rutas propuestas son posibles.
- 
- 
-##Pasos [@alagador_shifting_2014]:
-
-- Crear indices de idoneidad de habitat
-- Habilidad de dispersión de las especies
-- Metas de representatividad de especies
-- Costo y presupuesto
-- Optimización
-
-Connectivity Planning to Address Climate Change
-
-In the past, species moved great distances relatively unim-
-peded in response to climatic change (Parmesan & Yohe
-2003; Martinez-Meyer et al. 2004). Given the rate of pro-
-jected future climate change, it is likely species will need
-to move farther in the 21
-st
-century (Schloss et al. 2012),
-and they may encounter substantial anthropogenic bar-
-riers that were not present in the past (Sanderson
-et al. 2002). Thus, maintaining connectivity—the degree
-to which a landscape facilitates the movement of or-
-ganisms (Tischendorf & Fahrig 2000)—is the most fre-
-quently recommended strategy for conserving species
-diversity in a changing climate (Heller & Zavaleta 2009).
-However, traditional connectivity models are used to
-identify areas that facilitate species movements at one
-point in time between their current habitats and within
-their current distributions (Crooks & Sanjayan 2006;
-Hannah 2011). Thus, these models cannot identify areas
-that would allow species to track climate-driven range
-shifts of key attributes of their habitats. We focused
-instead on connectivity that enables species—and their
-component populations—to move among suitable areas
-and to newly suitable areas over time as climate changes
-(Hannah 2011)
 
 #Planificacion
 
@@ -105,7 +68,7 @@ and to newly suitable areas over time as climate changes
 library(plan)
 library(lubridate)
 data("gantt")
-description <- c("Preparacion base de datos", "Clasificacion de especies", "Modelacion distribucion actual", "Modelacion distribucion futura", "Congreso Socecol", "Desarrollo e implementación del\n Packete BioCorridoR para R" ,"Desarrollo modelos basados\n en agentes", "Generación de corredores\n para Chile", "Asistencia Congreso UseR!", "Publicación sobre Paquete R","Generacion de corredores\n Para Sudamerica", "Publicación corredores\n de Chile" , "Desarrollo de plataforma Shiny", "Publicación concenso corredores\n Chile, Sudamerica", "Congreso")
+description <- c("Preparacion base de datos", "Clasificacion de especies", "Modelacion distribucion actual", "Modelacion distribucion futura", "Congreso Socecol", "Desarrollo e implementación del\n Packete BioCorridoR para R" ,"Desarrollo modelos basados\n en agentes", "Generación de corredores\n para Chile", "Asistencia Congreso UseR!", "Publicación sobre Paquete R","Generacion de corredores\n Para Sudamerica", "Publicación corredores\n de Chile" , "Desarrollo de plataforma Shiny", "Publicación concenso corredores\n Chile, Sudamerica")
 start <- as.POSIXct(dmy(c("01/03/2017","01/03/2017", "01/07/2017", "01/07/2017","01/11/2017","01/07/2017", "02/01/2018", "02/01/2018", "15/06/2018", "1/10/2018", "01/01/2019", "02/01/2019", "01/08/2019", "01/09/2019")))
 end <- as.POSIXct(dmy(c("30/06/2017","30/06/2017", "31/12/2017","31/12/2017","15/11/2017","31/12/2018", "31/07/2018", "31/07/2018", "7/07/2018", "31/12/2018", "31/07/2018", "30/04/2019", "30/10/2019", "31/12/2019")))
 
